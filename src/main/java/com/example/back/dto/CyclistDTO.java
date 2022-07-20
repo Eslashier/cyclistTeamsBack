@@ -9,12 +9,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class CyclistDTO {
 
     private String id;
-    @NotNull(message = "Name is mandatory")
+    @NotNull(message = "Competition number is mandatory")
     private String fullName;
     @Positive
     @Indexed(unique = true)
@@ -24,5 +22,4 @@ public class CyclistDTO {
     private String team;
     @NotNull(message = "Nationality is mandatory")
     private String nationality;
-
 }

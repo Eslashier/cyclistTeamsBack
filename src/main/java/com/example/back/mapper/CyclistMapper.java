@@ -16,11 +16,11 @@ public class CyclistMapper {
         this.modelMapper = modelMapper;
     }
 
-    public CyclistDTO fromProductToProductDTO(Cyclist cyclist){
+    public CyclistDTO fromCyclistToCyclistDTO(Cyclist cyclist){
         return modelMapper.map(cyclist, CyclistDTO.class);
     }
 
-    public Cyclist fromProductDTOToProduct(CyclistDTO cyclistDTO){
+    public Cyclist fromCyclistDTOToCyclist(CyclistDTO cyclistDTO){
         return modelMapper.map(cyclistDTO, Cyclist.class);
     }
 }

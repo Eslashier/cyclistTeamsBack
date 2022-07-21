@@ -11,17 +11,19 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
-class CreateCyclistUseCaseTest {
+class UpdateCyclistUseCaseTest {
 
     @MockBean
-    private CreateCyclistUseCase createCyclistUseCase;
+    private UpdateCyclistUseCase updateCyclistUseCase;
 
     @Mock
     ICyclistRepository iCyclistRepository;
 
     @Test
-    void createCyclistTest(){
+    void updateCyclistTest(){
         Cyclist cyclist = new Cyclist(
                 "id1",
                 "Name Test",
@@ -39,12 +41,9 @@ class CreateCyclistUseCaseTest {
 
 
 
-        Mockito.when(iCyclistRepository.save(cyclist)).thenReturn(Mono.just(cyclist));
-
-        var resultMono = createCyclistUseCase.postCyclist(cyclistDTO);
-
-        StepVerifier.create(resultMono).ex
-
+        StepVerifier.create(Mono.just(Mockito.when(updateCyclistUseCase.putCyclist(cyclistDTO))
+                        .thenReturn(Mono.just(cyclistDTO))))
+                        .expectComplete();
     }
 
 }

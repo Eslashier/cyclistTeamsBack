@@ -16,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetCyclistRoute {
 
     @Bean
-    public RouterFunction<ServerResponse> getAllCyclist(GetAllCyclistsUseCase getAllCyclistsUseCase){
+    public RouterFunction<ServerResponse> getAllCyclists(GetAllCyclistsUseCase getAllCyclistsUseCase){
         return route(GET("/v1/teamsApi/getAllCyclists"), request -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(getAllCyclistsUseCase.getAllCyclists(), CyclistDTO.class)));

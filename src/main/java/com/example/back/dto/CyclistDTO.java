@@ -19,8 +19,8 @@ public class CyclistDTO {
     @Indexed(unique = true)
     @NotNull(message = "Competition number is mandatory")
     private Integer competitionNumber;
-    @NotNull(message = "Team is mandatory")
-    private String team;
+    @NotNull(message = "TeamId is mandatory")
+    private String teamId;
     @NotNull(message = "Nationality is mandatory")
     private String nationality;
 }

@@ -4,9 +4,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +14,6 @@ public class Cyclist {
     private String id;
     private String fullName;
     private Integer competitionNumber;
-    private String team;
+    private String teamId;
     private String nationality;
 }

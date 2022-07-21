@@ -14,10 +14,9 @@ public class GetCyclistByNationalityUseCase {
     private final ICyclistRepository iCyclistRepository;
     private final CyclistMapper cyclistMapper;
 
-    public Flux<CyclistDTO> apply(String nationality){
+    public Flux<CyclistDTO> findByNationality(String nationality) {
         return iCyclistRepository
-                .findAllByNationality(nationality)
+                .findByNationality(nationality)
                 .map(cyclistMapper::fromCyclistToCyclistDTO);
     }
-
 }

@@ -18,6 +18,6 @@ public class GetTeamsByCountryUseCase {
     public Flux<TeamDTO> findByCountry(String country) {
         return iTeamRepository
                 .findByCountry(country)
-                .map(teamMapper::fromProductToProductDTO);
+                .map(teamMapper::fromTeamToTeamDTO);
     }
 }

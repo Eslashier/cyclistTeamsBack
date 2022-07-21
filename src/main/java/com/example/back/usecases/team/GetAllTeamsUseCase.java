@@ -15,7 +15,7 @@ public class GetAllTeamsUseCase {
     private final TeamMapper teamMapper;
 
     public Flux<TeamDTO> getAllTeams(){
-        return iTeamRepository.findAll().map(teamMapper::fromProductToProductDTO);
+        return iTeamRepository.findAll().map(teamMapper::fromTeamToTeamDTO);
     }
 
 }

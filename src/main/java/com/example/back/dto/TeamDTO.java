@@ -19,8 +19,8 @@ public class TeamDTO {
     @NotNull(message = "Team name is mandatory")
     private String teamName;
     @NotNull(message = "Team Abbreviation is mandatory")
-    @Size(min = 3, message = "{validation.teamAbbreviation.size.too_short}")
-    @Size(max = 3, message = "{validation.teamAbbreviation.size.too_long}")
+    @Size(min = 3, message = "Abbreviation must have 3 letters or numbers")
+    @Size(max = 3, message = "Abbreviation must have 3 letters or numbers")
     private String teamAbbreviation;
     @NotNull(message = "Country is mandatory")
     private String country;

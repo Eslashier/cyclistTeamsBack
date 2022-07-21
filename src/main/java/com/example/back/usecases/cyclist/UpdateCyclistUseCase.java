@@ -8,19 +8,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
 
-import javax.validation.Valid;
 import javax.validation.constraints.AssertTrue;
 
 @Service
 @Validated
 @AllArgsConstructor
-public class CreateCyclistUseCase {
+public class UpdateCyclistUseCase {
 
     private final ICyclistRepository iCyclistRepository;
     private final CyclistMapper cyclistMapper;
 
     @AssertTrue
-    public Mono<CyclistDTO> postCyclist(CyclistDTO cyclistDTO){
+    public Mono<CyclistDTO> putCyclist(CyclistDTO cyclistDTO){
         return iCyclistRepository
                 .save(cyclistMapper.fromCyclistDTOToCyclist(cyclistDTO))
                 .map(cyclistMapper::fromCyclistToCyclistDTO);

@@ -1,4 +1,4 @@
-package com.example.back.config;
+package com.example.back.mapper.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

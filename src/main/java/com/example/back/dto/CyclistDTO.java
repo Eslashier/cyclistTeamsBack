@@ -1,17 +1,18 @@
 package com.example.back.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 @Data
+
 public class CyclistDTO {
 
     private String id;
+    @NotEmpty(message = "Competition number is mandatory")
     @NotNull(message = "Competition number is mandatory")
     private String fullName;
     @Positive

@@ -21,7 +21,7 @@ class CreateCyclistUseCaseTest {
     ICyclistRepository iCyclistRepository;
 
     @Test
-    void createCyclistTest(){
+    public void createCyclistTest(){
         Cyclist cyclist = new Cyclist(
                 "id1",
                 "Name Test",
@@ -39,12 +39,9 @@ class CreateCyclistUseCaseTest {
 
 
 
-        Mockito.when(iCyclistRepository.save(cyclist)).thenReturn(Mono.just(cyclist));
-
-        var resultMono = createCyclistUseCase.postCyclist(cyclistDTO);
-
-        StepVerifier.create(resultMono).ex
-
+        StepVerifier.create(Mono.just(Mockito.when(createCyclistUseCase.postCyclist(cyclistDTO))
+                        .thenReturn(Mono.just(cyclistDTO))))
+                        .expectComplete();
     }
 
 }

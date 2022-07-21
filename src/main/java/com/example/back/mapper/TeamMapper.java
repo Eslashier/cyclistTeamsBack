@@ -16,11 +16,11 @@ public class TeamMapper {
         this.modelMapper = modelMapper;
     }
 
-    public TeamDTO fromProductToProductDTO(Team team){
+    public TeamDTO fromTeamToTeamDTO(Team team){
         return modelMapper.map(team, TeamDTO.class);
     }
 
-    public Team fromProductDTOToProduct(TeamDTO teamDTO){
+    public Team fromTeamDTOToTeam(TeamDTO teamDTO){
         return modelMapper.map(teamDTO, Team.class);
     }
 

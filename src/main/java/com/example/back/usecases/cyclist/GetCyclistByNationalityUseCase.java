@@ -5,22 +5,19 @@ import com.example.back.mapper.CyclistMapper;
 import com.example.back.repository.ICyclistRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
-import reactor.core.publisher.Mono;
-
-import javax.validation.Valid;
+import reactor.core.publisher.Flux;
 
 @Service
-@Validated
 @AllArgsConstructor
-public class CreateCyclistUseCase {
+public class GetCyclistByNationalityUseCase {
 
     private final ICyclistRepository iCyclistRepository;
     private final CyclistMapper cyclistMapper;
 
-    public Mono<CyclistDTO> postCyclist(@Valid CyclistDTO cyclistDTO){
+    public Flux<CyclistDTO> apply(String nationality){
         return iCyclistRepository
-                .save(cyclistMapper.fromCyclistDTOToCyclist(cyclistDTO))
+                .findAllByNationality(nationality)
                 .map(cyclistMapper::fromCyclistToCyclistDTO);
     }
+
 }

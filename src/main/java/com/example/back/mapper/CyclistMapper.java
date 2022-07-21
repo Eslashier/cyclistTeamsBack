@@ -6,6 +6,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.config.EnableWebFlux;
 
+import java.util.Optional;
+
 @Component
 @EnableWebFlux
 public class CyclistMapper {
@@ -23,4 +25,5 @@ public class CyclistMapper {
     public Cyclist fromCyclistDTOToCyclist(CyclistDTO cyclistDTO){
         return modelMapper.map(cyclistDTO, Cyclist.class);
     }
+
 }
